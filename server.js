@@ -1,4 +1,4 @@
-const path= require('path);
+const path= require('path');
 const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
@@ -112,4 +112,5 @@ app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 
 });
+
 
