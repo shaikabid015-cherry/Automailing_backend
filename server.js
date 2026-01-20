@@ -1,3 +1,4 @@
+const path= require('path);
 const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
@@ -104,4 +105,5 @@ app.get('/templates', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
+
 });
