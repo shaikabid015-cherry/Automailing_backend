@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Mailing System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-envelope"></i> Auto Mailing System</h1>
+            <p>Send automated emails with a single click</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Email Form -->
+            <div class="card">
+                <h2><i class="fas fa-paper-plane"></i> Send Email</h2>
+                
+                <div class="form-group">
+                    <label for="emailTo"><i class="fas fa-user"></i> Recipient Email</label>
+                    <input type="email" id="emailTo" placeholder="recipient@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="emailSubject"><i class="fas fa-tag"></i> Subject</label>
+                    <input type="text" id="emailSubject" placeholder="Email subject" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="emailMessage"><i class="fas fa-comment"></i> Message</label>
+                    <textarea id="emailMessage" rows="6" placeholder="Type your message here..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="templateSelect"><i class="fas fa-file-alt"></i> Quick Templates</label>
+                    <select id="templateSelect" onchange="loadTemplate()">
+                        <option value="">Select a template</option>
+                        <option value="welcome">Welcome Email</option>
+                        <option value="notification">Notification</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                </div>
+
+                <div class="button-group">
+                    <button id="sendBtn" onclick="sendEmail()">
+                        <i class="fas fa-paper-plane"></i> Send Email
+                    </button>
+                    <button id="previewBtn" onclick="previewEmail()">
+                        <i class="fas fa-eye"></i> Preview
+                    </button>
+                    <button id="clearBtn" onclick="clearForm()">
+                        <i class="fas fa-trash"></i> Clear
+                    </button>
+                </div>
+
+                <div id="statusMessage" class="status-message"></div>
+            </div>
+
+            <!-- Preview Section -->
+            <div class="card">
+                <h2><i class="fas fa-eye"></i> Email Preview</h2>
+                <div id="emailPreview" class="email-preview">
+                    <p>Your email preview will appear here...</p>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="card">
+                <h2><i class="fas fa-history"></i> Recent Activity</h2>
+                <ul id="activityLog"></ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>Auto Mailing System &copy; 2024 | Backend Email Integration</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
