@@ -25,6 +25,13 @@ const transporter = nodemailer.createTransport({
     rejectUnauthorized: false // Helps prevents self-signed cert errors in some cloud envs
   }
 });
+transporter.verify(function(error, success) {
+  if (error) {
+    console.log("Transporter error:", error);
+  } else {
+    console.log("Server is ready to take our messages");
+  }
+});
 
 // Test route
 app.get('/', (req, res) => {
@@ -117,6 +124,7 @@ app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 
 });
+
 
 
 
