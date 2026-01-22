@@ -15,8 +15,8 @@ app.use(express.static(path.join(__dirname,'public')));
 // Create transporter
 const transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com', // Explicit host
-  port: 587,              // Standard TLS port
-  secure: false,          // true for 465, false for other ports
+  port: 465,              // Standard TLS port
+  secure: true,          // true for 465, false for other ports
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS
@@ -124,6 +124,7 @@ app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 
 });
+
 
 
 
