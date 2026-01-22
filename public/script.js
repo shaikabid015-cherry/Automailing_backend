@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://auto-mailing-system.onrender.com';
+const API_BASE_URL = '';
 
 // DOM Elements
 const emailToInput = document.getElementById('emailTo');
@@ -191,3 +191,4 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Auto Mailing System initialized');
 
 });
+
