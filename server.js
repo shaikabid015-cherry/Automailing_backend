@@ -14,16 +14,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname,'public')));
 // Create transporter
 const transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com', // Explicit host
-  port: 465,              // Standard TLS port
-  secure: true,          // true for 465, false for other ports
+  service: 'gmail',
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS
   },
-  tls: {
-    rejectUnauthorized: false // Helps prevents self-signed cert errors in some cloud envs
-  }
+  family:4
 });
 transporter.verify(function(error, success) {
   if (error) {
@@ -124,6 +120,7 @@ app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 
 });
+
 
 
 
